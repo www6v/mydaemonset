@@ -63,11 +63,11 @@ func (r *MyDaemonsetReconciler) Reconcile(ctx context.Context, req ctrl.Request)
 		}
 		for _, n := range nl.Items {
 			p := v1.Pod{
-				TypeMeta: v12.TypeMeta{
+				TypeMeta: ctrl.TypeMeta{
 					APIVersion: "v1",
 					Kind:       "Pod",
 				},
-				ObjectMeta: v12.ObjectMeta{
+				ObjectMeta: ctrl.ObjectMeta{
 					GenerateName: fmt.Sprintf("%s-", n.Name),
 					Namespace:    myds.Namespace,
 				},
