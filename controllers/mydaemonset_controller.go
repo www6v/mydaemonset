@@ -73,9 +73,12 @@ func (r *MyDaemonsetReconciler) Reconcile(ctx context.Context, req ctrl.Request)
 				},
 				Spec: v1.PodSpec{
 					Containers: []v1.Container{
-						Image: myds.Spec.Image,
-						Name:  "container",
+						{
+							Image: myds.Spec.Image,
+							Name:  "container",
+						},
 					},
+					NodeName: n.Name,
 				},
 			}
 
