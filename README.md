@@ -1,7 +1,7 @@
 
 ### 使用kubebuilder构建Kubenetes Operator
 
-##### 需要变更的一些类
+##### 需要实现业务逻辑的一些文件
 api/v1beta1/mydaemonset_types.go 
 
 api/v1beta1/mydaemonset_webhook.go 
