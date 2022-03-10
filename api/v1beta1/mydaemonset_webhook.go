@@ -54,6 +54,9 @@ var _ webhook.Validator = &MyDaemonset{}
 func (r *MyDaemonset) ValidateCreate() error {
 	mydaemonsetlog.Info("validate create", "name", r.Name)
 
+        if r.Spec.Image == "" {
+           return fmt.Errorf("image is required")
+        }
 	// TODO(user): fill in your validation logic upon object creation.
 	return nil
 }
